@@ -4,6 +4,7 @@
     border: none;
 }
 
+/* set heigt 100% for background image */
 body,
 html {
     height: 100%;
@@ -16,7 +17,75 @@ body {
     background-repeat: no-repeat;
 }
 
+/* glow animation for qr code */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(212, 192, 192, 1);
+    }
+
+    50% {
+        box-shadow: 0 0 35px rgba(212, 192, 192, 1);
+    }
+
+    100% {
+        box-shadow: 0 0 10px rgba(212, 192, 192, 1);
+    }
+}
+
 #qr_code {
     margin: 10%;
     width: 20%;
+    border-radius: 10px;
+    animation: glow 1.5s infinite alternate ease-in-out;
+}
+
+/* styling for small laptop screens and tablets */
+@media screen and (max-width: 1000px) {
+
+    body {
+        background-position: 62% 38%;
+    }
+
+    #qr_code {
+        width: 22%;
+    }
+}
+
+/* styling for tablets and big fold phones */
+@media screen and (max-width: 860px) {
+
+    body {
+        background-position: 66% 44%;
+    }
+
+    #qr_code {
+        margin: 3% 0% 0% 43%;
+        width: 22%;
+    }
+}
+
+/* styling for small tablets small fold phones*/
+@media screen and (max-width: 540px) {
+
+    body {
+        background-position: 66% 44%;
+    }
+
+    #qr_code {
+        margin: 3% 0% 0% 38%;
+        width: 30%;
+    }
+}
+
+/* styling for phones*/
+@media screen and (max-width: 430px) {
+
+    body {
+        background-position: 66% 44%;
+    }
+
+    #qr_code {
+        margin: 3% 0% 0% 27%;
+        width: 46%;
+    }
 }
